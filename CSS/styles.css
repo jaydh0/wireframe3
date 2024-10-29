@@ -1,46 +1,96 @@
-#container{
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+#container {
     display: grid;
-    height: 100vh;
-    grid-template-columns: 0.3fr 1fr;
-    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-columns: 3.5fr 20fr; /* Sidebar + Main */
+    grid-template-rows: 140px auto 140px;
     grid-template-areas: 
-    "header header"
-    " sidebar main"
-    "footer footer ";
+        "header header"
+        "sidebar main"
+        "footer footer";
+    grid-gap: 10px;
+    width: 85%;
+    margin: auto;
+    min-height: 100vh;
+}
+
+header {
+    background-color: rgb(229, 127, 255);
+    grid-area: header;
+    border: 2px solid;
+}
+
+.sidebar {
+    background-color: rgb(229, 127, 255);
+    grid-area: sidebar;
+    border: 2px solid;
+}
+
+#mainwrapper {
+    background-color: rgb(229, 127, 255);
+    border: solid 2px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    grid-template-rows: auto; /* Dynamic rows */
+    grid-template-areas: 
+        "sub1 sub1 sub1"
+        "par1 par1 par1"
+        "sub2 sub2 sub2"
+        "parmid parmid2 parmid3"
+        "sub3 sub3 sub3"
+        "par4 par5 par5";
     grid-gap: 10px;
 }
 
-#mainwrapper{
-    background-color: aqua;
-    grid-area: main;
-    display: grid;
-    }
-
-
-
-.footerdiv{
-    background-color: aquamarine;
+.footerdiv {
+    background-color: rgb(229, 127, 255);
     grid-area: footer;
+    border: 2px solid;
 }
 
-.sidebar{
-    background-color: aquamarine;
-    grid-area: sidebar;
+/* Media Query for Tablet Devices */
+@media only screen and (max-width: 900px) {
+    #container {
+        grid-template-columns: 1fr 2fr; /* Sidebar takes less space */
+    }
+
+    #mainwrapper {
+        grid-template-columns: 1fr 1fr; /* Reduce to two columns */
+    }
 }
 
-header{
-    background-color: blue;
-    grid-area: header;
-}
-
+/* Media Query for Mobile Devices */
 @media only screen and (max-width: 550px) {
-    #container{
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+    #container {
+        grid-template-columns: 1fr;  /* Stack everything vertically */
+        grid-template-rows: auto;    /* Dynamic row heights */
         grid-template-areas: 
-        "header"
-        "sidebar"
-        "main"
-        "footer"
+            "header"
+            "sidebar"
+            "main"
+            "footer";
     }
+
+    #mainwrapper {
+        grid-template-columns: 1fr; /* Single column layout */
+        grid-template-areas: 
+            "sub1"
+            "par1"
+            "sub2"
+            "parmid"
+            "parmid2"
+            "parmid3"
+            "sub3"
+            "par4"
+            "par5";
     }
+}

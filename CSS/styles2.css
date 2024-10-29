@@ -1,0 +1,60 @@
+
+
+.sub1 {
+    
+    grid-area: sub1;
+}
+
+.par1 {
+    
+    grid-area: par1;
+    margin-bottom: 30px;
+}
+
+.sub2 {
+
+    grid-area: sub2;
+}
+
+.section1 {
+   
+    grid-area: parmid;
+}
+
+.section2 {
+   
+    grid-area: parmid3;
+}
+
+.section3 {
+    
+    grid-area: parmid2;
+    
+}
+
+.section1, .section2, .section3{
+    
+    margin-bottom: 30px; 
+}
+
+.sub3 {
+   
+    grid-area: sub3;
+}
+
+.section4 {
+   
+    grid-area: par4;
+    
+}
+
+.section5 {
+    
+    grid-area: par5;
+}
+
+#mainwrapper > *{
+    border: 1.8px solid;
+    background-color: aliceblue;
+}
+
