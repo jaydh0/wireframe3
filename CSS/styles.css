@@ -1,25 +1,21 @@
+
 * {
     box-sizing: border-box;
+    
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
 
 #container {
     display: grid;
-    grid-template-columns: 3.5fr 20fr; /* Sidebar + Main */
-    grid-template-rows: 140px auto 140px;
+    grid-template-columns: 4.5fr 20fr;
+    grid-template-rows: 140px 800px 140px;
     grid-template-areas: 
         "header header"
         "sidebar main"
-        "footer footer";
+        "Foot Foot";
     grid-gap: 10px;
     width: 85%;
     margin: auto;
-    min-height: 100vh;
 }
 
 header {
@@ -35,12 +31,12 @@ header {
 }
 
 #mainwrapper {
-    background-color: rgb(229, 127, 255);
+    background-color: rgb(229, 127, 255);;
     border: solid 2px;
     padding: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
-    grid-template-rows: auto; /* Dynamic rows */
+    grid-template-columns: 3fr 3fr 3fr;
+    grid-template-rows: 5fr 20fr 5fr 30fr 5fr 16fr;
     grid-template-areas: 
         "sub1 sub1 sub1"
         "par1 par1 par1"
@@ -48,7 +44,7 @@ header {
         "parmid parmid2 parmid3"
         "sub3 sub3 sub3"
         "par4 par5 par5";
-    grid-gap: 10px;
+        grid-gap: 10px;
 }
 
 .footerdiv {
@@ -57,40 +53,8 @@ header {
     border: 2px solid;
 }
 
-/* Media Query for Tablet Devices */
-@media only screen and (max-width: 900px) {
-    #container {
-        grid-template-columns: 1fr 2fr; /* Sidebar takes less space */
-    }
-
-    #mainwrapper {
-        grid-template-columns: 1fr 1fr; /* Reduce to two columns */
-    }
-}
-
-/* Media Query for Mobile Devices */
-@media only screen and (max-width: 550px) {
-    #container {
-        grid-template-columns: 1fr;  /* Stack everything vertically */
-        grid-template-rows: auto;    /* Dynamic row heights */
-        grid-template-areas: 
-            "header"
-            "sidebar"
-            "main"
-            "footer";
-    }
-
-    #mainwrapper {
-        grid-template-columns: 1fr; /* Single column layout */
-        grid-template-areas: 
-            "sub1"
-            "par1"
-            "sub2"
-            "parmid"
-            "parmid2"
-            "parmid3"
-            "sub3"
-            "par4"
-            "par5";
-    }
+.Foot {
+    background-color: rgb(229, 127, 255);
+    grid-area: Foot;
+    border: 2px solid;
 }

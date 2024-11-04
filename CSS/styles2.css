@@ -1,4 +1,6 @@
-
+*{
+    box-sizing: border-box;
+}
 
 .sub1 {
     
@@ -56,5 +58,7 @@
 #mainwrapper > *{
     border: 1.8px solid;
     background-color: aliceblue;
+    min-width: 100%
+   
 }
 
